@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="container" class="d-flex justify-content-center">
+    <section id="hero" class="d-flex justify-content-center">
 
             <div class="card text-white col-6" id="card" style="background-color: #000000e1;">
-            <div class="search ">
+            <div class="search mb-2">
                 <input type="text" class="search-bar" placeholder="Search">
 
                 <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
@@ -26,22 +26,65 @@
                 </svg></button>
             </div>
               <div class="content">
-                <h4 class="card-title">Weather in Fohnsdorf</h4>
+                <h4 class="card-title mt-1">Weather in Fohnsdorf</h4>
                 <div class="temp">
                     <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon">
                     <div class="degrees">-14°C</div>
+                    <div class="description mb-4">Cloudy</div>
                 </div>
-                <div class="description">Cloudy</div>
+
+                <div class="feels-like">Feels Like:</div>
               <div class="humidity">Humidity: 60%</div>
               <div class="wind">Wind speed: 6.2 km/h</div>
+              <div class="min-temp">Min Temp: </div>
+              <div class="max-temp">Max Temp:</div>
             </div>
         </div>
     </section>
 
-    <section id="weather-days">
-        
-    </section>
+    <!-- Start Forecast Section -->
+    <section id="forecast">
 
+        <div class="future-forecast">
+            <div class="today" id="current-temp">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="other">
+                    <div class="day">Monday</div>
+                    <div class="temp">Night - 25.6&#176; C</div>
+                    <div class="temp">Day - 35.6&#176; C</div>
+                </div>
+            </div>
+    
+            <div class="weather-forecast" id="weather-forecast">
+                <div class="weather-forecast-item">
+                    <div class="day">Tue</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="temp">Night - 25.6&#176; C</div>
+                    <div class="temp">Day - 35.6&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Wed</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="temp">Night - 25.6&#176; C</div>
+                    <div class="temp">Day - 35.6&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Thur</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="temp">Night - 25.6&#176; C</div>
+                    <div class="temp">Day - 35.6&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Fri</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="temp">Night - 25.6&#176; C</div>
+                    <div class="temp">Day - 35.6&#176; C</div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <!-- End Forecast Section -->
 
 
     
