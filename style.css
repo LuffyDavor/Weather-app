@@ -2,8 +2,12 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    background-image: url(/img/default.png);
+    background-size: cover;
 }
-
+.hero{
+    min-height: 70vh;
+}
 #hero .card {
     background: #000000d0;
     color: white;
@@ -19,7 +23,7 @@ body{
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: .8;
+    opacity: .2;
     z-index: -1;
 }
 #hero .description{
@@ -69,7 +73,7 @@ button {
 
   
 .future-forecast{
-    background: rgba(24,24,27,0.8);
+    background: rgba(24, 24, 27, 0.61);
     padding: 25px;
     position: fixed;
     bottom: 0;

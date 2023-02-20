@@ -96,10 +96,22 @@ searchButton.addEventListener('click', () => {
   updateWeather(apiUrl, forecastUrl, weatherApiUrl);
 });
 
+// Add Enter event listener to search bar
+searchInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && searchInput.value.trim() !== '') {
+    const city = searchInput.value;
+    apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKeyOpenWeather}&units=metric`;
+    forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKeyOpenWeather}&units=metric`;
+    weatherApiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKeyWeatherApi}&q=${city}`; 
+    updateWeather(apiUrl, forecastUrl, weatherApiUrl);
+  }
+});
 
 
 
-// Functions to update the weather card with the data
+
+
+// Functions to update the weather cards with the data
 function updateWeather(apiUrl, forecastUrl, weatherApiUrl) {
   Promise.all([
     fetch(apiUrl).then(response => response.json()),
@@ -114,8 +126,10 @@ function updateWeather(apiUrl, forecastUrl, weatherApiUrl) {
     showWeatherData(forecastData);
     weather2.fillFromWeatherApi(weatherApiData);
 
+    console.log(weather1,weather2);
     showWeatherData(forecastData);
     displayWeather(weather1, weather2);
+    selectBackground();
   })
   .catch(displayError);
 }
@@ -142,25 +156,25 @@ function displayError(error) {
 function selectBackground(){
   switch (true) {
     case /clear/i.test(weather1.description):
-      // set background image for clear weather
+      document.body.style.backgroundImage = "url('/img/clear.png')";
+      break;
+    case /drizzle/i.test(weather1.description):
+      document.body.style.backgroundImage = "url('/img/drizzle1.png')";
       break;
     case /clouds/i.test(weather1.description):
-      // set background image for cloudy weather
+      document.body.style.backgroundImage = "url('/img/clouds.png')";
       break;
     case /rain/i.test(weather1.description):
-      // set background image for rainy weather
+      document.body.style.backgroundImage = "url('/img/rain1.png')";
       break;
     case /thunderstorm/i.test(weather1.description):
-      // set background image for thunderstorm weather
+      document.body.style.backgroundImage = "url('/img/thunderstorm.png')";
       break;
     case /snow/i.test(weather1.description):
-      // set background image for snowy weather
-      break;
-    case /mist/i.test(weather1.description):
-      // set background image for misty weather
+      document.body.style.backgroundImage = "url('/img/snow.png')";
       break;
     default:
-      // set default background image if none of the above conditions are met
+      document.body.style.backgroundImage = "url('/img/default.png')";
   }
 }
 
