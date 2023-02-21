@@ -5,6 +5,76 @@ body{
     background-image: url(/img/default.png);
     background-size: cover;
 }
+
+#header .hamburger ul{
+    list-style: none;
+    position: absolute;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    overflow-x: hidden;
+    transition: .5s ease left;
+}
+#header .hamburger ul.active{
+    left: 0;
+}
+#header .hamburger ul li a.active{
+    left: 100%;
+}
+#header .hamburger ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 7.5rem;
+    white-space: nowrap;
+    overflow-wrap: none;
+    margin-left: 10px;
+    transform: translate(-50%,-50%) scale(0);
+    color: rgba(65, 23, 90, 0.295);
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+
+}
+#header .hamburger ul li:hover a::after{
+    transform: translate(-50%,-50%) scale(1);
+    letter-spacing: initial;
+}
+#header .hamburger ul li a:hover {
+    color: rgba(111, 19, 239);
+}
+#header .name a{
+    font-size: 2rem;
+    font-weight: 100;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    
+}
+#header .hamburger a{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+
+
+
+
+
 .hero{
     min-height: 70vh;
 }
